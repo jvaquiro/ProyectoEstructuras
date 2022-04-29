@@ -1,0 +1,4 @@
+codigo = SDF, fechaNacimiento =ASF, raza=DF, sexo=DF
+codigo = ASF, fechaNacimiento =ASDF, raza=SF, sexo=DF
+codigo = SDF, fechaNacimiento =ASF, raza=DF, sexo=DF
+codigo = ASF, fechaNacimiento =ASDF, raza=SF, sexo=DF

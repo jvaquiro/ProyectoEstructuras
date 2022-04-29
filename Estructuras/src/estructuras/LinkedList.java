@@ -19,6 +19,10 @@ public class LinkedList<T> {
 		return head;
 	}
 	
+	public Node<T> getTail() {
+		return tail;
+	}
+	
 	//Methods
 	
 	public boolean check() {

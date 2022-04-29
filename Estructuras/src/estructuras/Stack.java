@@ -15,5 +15,11 @@ public class Stack<T> extends LinkedList<T>{
 		return item;
 	}
 	
+    public Node<T> peek(){
+        Node<T> node=getHead();
+        pop();
+        return node;
+    }
+	
 
 }
