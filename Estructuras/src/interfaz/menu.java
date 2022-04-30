@@ -19,7 +19,7 @@ public class menu {
 		while (loop != true) {
 			System.out.println("1. para agregar Vaquitas");
 			System.out.println("2. para mostrar Vaquitas");
-			System.out.println("3. para elminar vaquitas");
+			System.out.println("3. para eliminar vaquitas");
 			System.out.println("4. Guardar Cambios y salir del programa");
 			int input;
 			input = s.nextInt();

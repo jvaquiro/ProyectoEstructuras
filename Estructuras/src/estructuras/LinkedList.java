@@ -83,7 +83,7 @@ public class LinkedList<T> {
         if (this.head != null) {
             Node<T> iterator = head;
             while (iterator.next != null) {
-                System.out.print(iterator.data + " -> ");
+                System.out.print(iterator.data + " ");
                 iterator = iterator.next;
             }
             System.out.println(iterator.data);

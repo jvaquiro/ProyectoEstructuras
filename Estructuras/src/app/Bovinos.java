@@ -5,9 +5,9 @@ public class Bovinos {
 	private String fechaNacimiento;
 	private String raza;
 	private String sexo;
-	
-	//constructor
-	
+
+	// constructor
+
 	public Bovinos(String fechaNacimiento, String codigo, String raza, String sexo) {
 		super();
 		this.codigo = codigo;
@@ -16,21 +16,17 @@ public class Bovinos {
 		this.sexo = sexo;
 	}
 
+	// Metodos
 
-	//Metodos
-	
-	
-	//Getter y setters
+	// Getter y setters
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
 	@Override
 	public String toString() {
-		return  "codigo = " + codigo + ", fechaNacimiento =" + fechaNacimiento + ", raza=" + raza + ", sexo="
-				+ sexo + "\n";
+		return codigo + " " + fechaNacimiento + " " + raza + " " + sexo + "\n";
 	}
-
 
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
@@ -59,6 +55,5 @@ public class Bovinos {
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
 	}
-	
 
 }

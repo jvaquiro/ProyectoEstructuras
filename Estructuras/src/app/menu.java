@@ -19,11 +19,12 @@ public class menu {
 		while (loop != true) {
 			System.out.println("1. para agregar Vaquitas");
 			System.out.println("2. para mostrar Vaquitas");
-			System.out.println("3. para eliminar vaquitas");
-			System.out.println("4. Guardar Cambios y salir del programa");
+			System.out.println("3. para eliminar la ultima Vaquita agregada");
+			System.out.println("4. para cargar vaquitas");
+			System.out.println("5. Guardar Cambios y salir del programa");
 			int input;
 			input = s.nextInt();
-			//try {
+			try {
 				if((input)== 1) {
 					t.registrarBovinoLL(agregar());
 					//loop = true;
@@ -33,16 +34,18 @@ public class menu {
 					
 		
 				}else if ((input)== 3) {
-					
+					t.l.popBack();
 				}
 				else if ((input)== 4) {
+					t.cargarBovinoTxT();	
+				}
+				else if ((input)== 5) {
 					t.guardarBovinoTXT();
 					loop = true;
-					
 				}
-			/*}catch (Exception e) {
+			}catch (Exception e) {
 				System.out.println("error");
-			}*/
+			}
 		}
 	}
 	
