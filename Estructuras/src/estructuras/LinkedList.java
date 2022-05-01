@@ -91,7 +91,28 @@ public class LinkedList<T> {
             System.out.println();
         }
     }
-
+    
+    public T finds(T valor) {
+    	if (check()) {
+    		System.out.println("null chec");
+			return null;
+		}else {
+			Node<T> temp ;
+			temp=head;
+		//	temp=head;
+			while (temp!=null) {
+				if (temp.data.equals(valor)) {
+					System.out.println("null temp");
+					return temp.data;
+				}
+				temp=temp.next;
+				System.out.println(temp.data);
+				
+			}			
+			return null ;
+		}
+    	
+    }
 	
 
 }

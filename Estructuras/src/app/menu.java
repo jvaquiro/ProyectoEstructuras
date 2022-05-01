@@ -24,7 +24,7 @@ public class menu {
 			System.out.println("5. Guardar Cambios y salir del programa");
 			int input;
 			input = s.nextInt();
-			try {
+			//try {
 				if((input)== 1) {
 					t.registrarBovinoLL(agregar());
 					//loop = true;
@@ -43,9 +43,12 @@ public class menu {
 					t.guardarBovinoTXT();
 					loop = true;
 				}
-			}catch (Exception e) {
+				else if ((input)== 6) {
+						t.buscarBovino("enero");
+				}
+		/*	}catch (Exception e) {
 				System.out.println("error");
-			}
+			}*/
 		}
 	}
 	

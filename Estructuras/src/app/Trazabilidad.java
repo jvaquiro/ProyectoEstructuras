@@ -65,5 +65,10 @@ public class Trazabilidad {
 			ex.printStackTrace();
 		}
 	}
+	public void buscarBovino(String id) {
+		Bovinos vaquita = new Bovinos(id, null, null, null);
+		l.finds(vaquita);
+	}
+	
 
 }
