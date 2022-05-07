@@ -44,7 +44,16 @@ public class menu {
 					loop = true;
 				}
 				else if ((input)== 6) {
-						t.buscarBovino("123213");
+					
+					System.out.println("Ingrese el fecha de nacimiento del animal");
+					String code = s.next();
+					System.out.println("Ingrese el codigo del animal");
+					String fecha = s.next();
+					System.out.println("Ingrese la raza del animal");
+					String raza = s.next();
+					System.out.println("Ingrese el sexo del animal");
+					String sexo = s.next();
+						t.BuscarBovino(code,fecha,raza,sexo);
 				}
 		/*	}catch (Exception e) {
 				System.out.println("error");

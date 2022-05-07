@@ -9,7 +9,7 @@ public class Bovinos {
 	// constructor
 
 	public Bovinos(String fechaNacimiento, String codigo, String raza, String sexo) {
-		super();
+		//super();
 		this.codigo = codigo;
 		this.fechaNacimiento = fechaNacimiento;
 		this.raza = raza;

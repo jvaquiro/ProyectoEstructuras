@@ -1,7 +1,13 @@
 package estructuras;
 
+import java.time.temporal.Temporal;
+
+import app.Bovinos;
+
 public class LinkedList<T> {
 	private Node<T> head, tail;
+	
+	
 	
 	//Constructors
 	
@@ -92,21 +98,27 @@ public class LinkedList<T> {
         }
     }
     
-    public T finds( Node node) {
+    public int finds( Node node) {
+    	int index=0;
     	if (check()) {
     		System.out.println("null chec");
-			return null;
+			return -1;
 		}else {
 			Node<T> temp ;
 			temp=head;
+			System.out.println(temp.data.toString()+"-_-"+node.data.toString());
+		//	System.out.println(node.data+"-_-");
+		//	System.out.println( temp.data +"__-__"+node.data+"_------_"+temp.data.equals(node.data) );
 			while (temp!=null) {
-				if (temp.data == node.data) {
+				if (temp.data.toString().equals(node.data.toString())) {
 					System.out.println(temp.data + "la encontro");
-					return temp.data;
+					return index;
 				}
+				index++;
 				temp = temp.next;
 			}			
-			return null ;
+			System.out.println("Nop");
+			return -1 ;
 		}
     	
     }
