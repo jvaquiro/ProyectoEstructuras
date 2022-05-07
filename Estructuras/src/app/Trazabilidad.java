@@ -12,6 +12,7 @@ public class Trazabilidad {
 	Stack<Bovinos> s = new Stack<>();
 	Queue<Bovinos> q = new Queue<>();
 	LinkedList<Bovinos> l = new LinkedList<>();
+	DinamicArray<Bovinos> d = new DinamicArray<>();
 
 	// Metodos
 	public void registrarBovinoLL(String[] datos) {
@@ -32,9 +33,23 @@ public class Trazabilidad {
 		s.push(new Node<Bovinos>(vaquita));
 	}
 
-	public void guardarBovinoTXT() {
-		Node<Bovinos> f = l.getHead();
+	public void registrarBovinoD(String[] datos) {
+		Bovinos vaquita;
+		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
+		d.push(vaquita);
+	}
 
+	public void guardarBovinoTXT(int t) {
+		Node<Bovinos> f ;
+		if(t==1) {
+			f = l.getHead();
+
+		}else if(t==2){
+			f = q.getHead();
+		}
+		else {
+			f = s.getHead();
+		}
 		try {
 			BufferedWriter bw = new BufferedWriter(new FileWriter("test.txt"));
 			bw.write("");
@@ -48,6 +63,7 @@ public class Trazabilidad {
 			escribir.close();
 		} catch (Exception e) {
 			System.out.println("Error al escribir");
+
 		}
 	}
 
@@ -58,6 +74,9 @@ public class Trazabilidad {
 				String line = input.nextLine();
 				String[] part = line.split(" ");
 				registrarBovinoLL(part);
+				registrarBovinoQ(part);
+				registrarBovinoS(part);
+				registrarBovinoD(part);
 
 			}
 			input.close();
@@ -65,15 +84,15 @@ public class Trazabilidad {
 			ex.printStackTrace();
 		}
 	}
-	/*public void buscarBovino(String id) {
-		Bovinos vaquita = new Bovinos(id,null,null,null);
-		//l.finds(vaquita);
-	}*/
-	public void BuscarBovino(String code, String fecha, String raza, String sexo) {
-		
+
+	public void BuscarBovinoLL(String code, String fecha, String raza, String sexo) {
 		Bovinos p1 = new Bovinos(code,fecha,raza,sexo);
 		System.out.println(l.finds(new Node (p1))); 
 	}
-	
+	public void BuscarBovinoD(String code, String fecha, String raza, String sexo) {
+		Bovinos p1 = new Bovinos(code,fecha,raza,sexo);
+		d.find(new Node (p1));
+	}
+
 
 }

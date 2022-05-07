@@ -6,31 +6,31 @@ import app.Bovinos;
 
 public class LinkedList<T> {
 	private Node<T> head, tail;
-	
-	
-	
+
+
+
 	//Constructors
-	
+
 	public LinkedList() {
 		this.head = this.tail = null;
-		
+
 	}
 	public LinkedList(Node<T> head) {
 		this.head = this.tail = head;
 	}
-	
+
 	//Getters
-	
+
 	public Node<T> getHead() {
 		return head;
 	}
-	
+
 	public Node<T> getTail() {
 		return tail;
 	}
-	
+
 	//Methods
-	
+
 	public boolean check() {
 		//Check if the list is empty
 		if (head == null) {
@@ -39,76 +39,76 @@ public class LinkedList<T> {
 			return false;
 		}
 	}
-	
+
 	public void pushFront(Node<T> newNode) {
 		//if is empty create a new node
 		if (check()) {
 			this.head = this.tail = newNode;
-		//if is not empty next node will be the head
+			//if is not empty next node will be the head
 		}else {
 			newNode.next = this.head;
 			this.head = newNode;
 		}
 	}
-	
+
 	public void popFront() {
 		//if is empty print List is empty
 		if(check()){
 			System.out.println("List is empty");
 		}else {
-		//if is not empty head will point to next node
+			//if is not empty head will point to next node
 			this.head = this.head.next;
 		}
 	}
-	
+
 	public void pushBack(Node<T> newNode) {
 		//if is empty print List is empty
 		if(check()){
 			this.head = this.tail = newNode;
 		}else {
-		//if is not empty head will point to next node
+			//if is not empty head will point to next node
 			this.tail.next = newNode;
 			this.tail = newNode;
 		}	
 	}
-	
+
 	public void popBack(){
 		if (check()){
-            System.out.println("List is empty");
-        }else {
-            Node<T> last = head;
-            while (last.next.next != null) {
-                last = last.next;
-            }
-            last.next = null;
-            tail = last;
-        }
+			System.out.println("List is empty");
+		}else {
+			Node<T> last = head;
+			while (last.next.next != null) {
+				last = last.next;
+			}
+			last.next = null;
+			tail = last;
+		}
 	}
-	
-    public void print() {
-        if (this.head != null) {
-            Node<T> iterator = head;
-            while (iterator.next != null) {
-                System.out.print(iterator.data + " ");
-                iterator = iterator.next;
-            }
-            System.out.println(iterator.data);
-        } else {
-            System.out.println();
-        }
-    }
-    
-    public int finds( Node node) {
-    	int index=0;
-    	if (check()) {
-    		System.out.println("null chec");
+
+	public void print() {
+		if (this.head != null) {
+			Node<T> iterator = head;
+			while (iterator.next != null) {
+				System.out.print(iterator.data);
+				iterator = iterator.next;
+			}
+			System.out.println(iterator.data);
+		} else {
+			System.out.println();
+		}
+	}
+
+	public int finds( Node node) {
+		int index=0;
+		if (check()) {
+			System.out.println("null chec");
 			return -1;
 		}else {
 			Node<T> temp ;
 			temp=head;
 			System.out.println(temp.data.toString()+"-_-"+node.data.toString());
-		//	System.out.println(node.data+"-_-");
-		//	System.out.println( temp.data +"__-__"+node.data+"_------_"+temp.data.equals(node.data) );
+			//	System.out.println(node.data+"-_-");
+			//	System.out.println( temp.data +"__-__"+node.data+"_------_"+temp.data.equals(node.data) );
 			while (temp!=null) {
 				if (temp.data.toString().equals(node.data.toString())) {
 					System.out.println(temp.data + "la encontro");
@@ -120,8 +120,8 @@ public class LinkedList<T> {
 			System.out.println("Nop");
 			return -1 ;
 		}
-    	
-    }
-	
+
+	}
+
 
 }

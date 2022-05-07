@@ -3,7 +3,7 @@ import app.*;
 import java.util.Scanner;
 
 public class menu {
-	
+
 	static Scanner s = new Scanner(System.in);
 	static Trazabilidad t = new Trazabilidad();
 
@@ -12,10 +12,10 @@ public class menu {
 
 
 	}
-	
+
 	public static void menuPrincipal () {
 		boolean loop = false;
-		
+
 		while (loop != true) {
 			System.out.println("1. para agregar Vaquitas");
 			System.out.println("2. para mostrar Vaquitas");
@@ -25,42 +25,55 @@ public class menu {
 			int input;
 			input = s.nextInt();
 			//try {
-				if((input)== 1) {
-					t.registrarBovinoLL(agregar());
-					//loop = true;
-					
-				}else if ((input)== 2){
-					t.l.print();
-					
-		
-				}else if ((input)== 3) {
-					t.l.popBack();
-				}
-				else if ((input)== 4) {
-					t.cargarBovinoTxT();	
-				}
-				else if ((input)== 5) {
-					t.guardarBovinoTXT();
-					loop = true;
-				}
-				else if ((input)== 6) {
-					
-					System.out.println("Ingrese el fecha de nacimiento del animal");
-					String code = s.next();
-					System.out.println("Ingrese el codigo del animal");
-					String fecha = s.next();
-					System.out.println("Ingrese la raza del animal");
-					String raza = s.next();
-					System.out.println("Ingrese el sexo del animal");
-					String sexo = s.next();
-						t.BuscarBovino(code,fecha,raza,sexo);
-				}
-		/*	}catch (Exception e) {
+			if((input)== 1) {
+				//t.registrarBovinoLL(agregar());
+				//t.registrarBovinoQ(agregar());
+				//t.registrarBovinoS(agregar());
+				t.registrarBovinoD(agregar());
+
+
+			}else if ((input)== 2){
+				//t.l.print();
+				//t.q.print();
+				//t.s.print();
+				t.d.print();
+
+			}else if ((input)== 3) {
+				//t.l.popBack();
+				//t.q.dequeue();
+				//t.s.pop();
+				t.d.pop();
+			}
+			else if ((input)== 4) {
+				t.cargarBovinoTxT();	
+			}
+			else if ((input)== 5) {
+				//t.guardarBovinoTXT(1);
+				//t.guardarBovinoTXT(2);
+				t.guardarBovinoTXT(3);
+
+				loop = true;
+			}
+			else if ((input)== 6) {
+
+				System.out.println("Ingrese el codigo del animal");
+				String code = s.next();
+				System.out.println("Ingrese el fecha de nacimiento del animal");
+				String fecha = s.next();
+				System.out.println("Ingrese la raza del animal");
+				String raza = s.next();
+				System.out.println("Ingrese el sexo del animal");
+				String sexo = s.next();
+				//t.BuscarBovinoLL(code,fecha,raza,sexo);
+				t.BuscarBovinoD(code, fecha, raza, sexo);
+
+			}
+			/*	}catch (Exception e) {
 				System.out.println("error");
 			}*/
 		}
 	}
-	
+
 	public static String[] agregar() {
 		String[] datos = new String[4];
 		System.out.println("Ingrese el codigo del animal");
@@ -71,7 +84,7 @@ public class menu {
 		datos[2] = s.next();
 		System.out.println("Ingrese el sexo del animal");
 		datos[3] = s.next();
-		
+
 		return datos;
 	}
 

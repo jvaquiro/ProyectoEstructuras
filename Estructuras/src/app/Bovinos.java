@@ -8,7 +8,7 @@ public class Bovinos {
 
 	// constructor
 
-	public Bovinos(String fechaNacimiento, String codigo, String raza, String sexo) {
+	public Bovinos( String codigo, String fechaNacimiento, String raza, String sexo) {
 		//super();
 		this.codigo = codigo;
 		this.fechaNacimiento = fechaNacimiento;
@@ -27,6 +27,11 @@ public class Bovinos {
 	public String toString() {
 		return codigo + " " + fechaNacimiento + " " + raza + " " + sexo + "\n";
 	}
+
+	public String codigo () {
+		return codigo;
+	}
+
 
 	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
