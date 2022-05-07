@@ -92,7 +92,7 @@ public class LinkedList<T> {
         }
     }
     
-    public T finds(T valor) {
+    public T finds( Node node) {
     	if (check()) {
     		System.out.println("null chec");
 			return null;
@@ -100,11 +100,11 @@ public class LinkedList<T> {
 			Node<T> temp ;
 			temp=head;
 			while (temp!=null) {
-				if (temp.data == valor) {
-					System.out.println(temp.data);
+				if (temp.data == node.data) {
+					System.out.println(temp.data + "la encontro");
 					return temp.data;
 				}
-				temp=temp.next;
+				temp = temp.next;
 			}			
 			return null ;
 		}

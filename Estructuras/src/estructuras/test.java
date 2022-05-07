@@ -5,23 +5,27 @@ public class test {
 	public static void main(String[] args) {
 		Stack<Integer> s = new Stack<>();
 		Queue<Integer> q = new Queue<>();
-		LinkedList<Integer> l = new LinkedList<>();
+		LinkedList<Bovinos> l = new LinkedList<>();
 		DinamicArray<Bovinos> d = new DinamicArray<>();
 		Bovinos v = new Bovinos("3242", "sfsdfs", "null", "null");
 		Bovinos t = new Bovinos("null", "null", "null", "null");
 		Bovinos p = new Bovinos("null", "null", "null", "null");
+		Bovinos p1 = new Bovinos("null", "null", "null", "null");
+		//Bovinos p1 = new Bovinos("3242", "sfsdfs", "null", "null");
 		
-		l.pushFront(new Node<Integer>(25));
-		l.pushFront(new Node<Integer>(35));
-		l.pushFront(new Node<Integer>(45));
-		l.pushFront(new Node<Integer>(55));
-		l.pushFront(new Node<Integer>(65));
-		d.push(v);
+		l.pushFront(new Node (v));
+		l.pushFront(new Node (t));
+		l.pushFront(new Node (p));
+		//l.pushFront(new Node<Integer>(55));
+		//l.pushFront(new Node<Integer>(65));
+		/*d.push(v);
 		d.push(t);
 		d.push(p);
 		d.pop();
-		//l.finds(65); 
-		d.print();
+		*/
+		
+		l.finds(new Node (p1)); 
+		//d.print();
 		
 		
 
