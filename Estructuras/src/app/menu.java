@@ -44,7 +44,7 @@ public class menu {
 					loop = true;
 				}
 				else if ((input)== 6) {
-						t.buscarBovino("enero");
+						t.buscarBovino("123213");
 				}
 		/*	}catch (Exception e) {
 				System.out.println("error");

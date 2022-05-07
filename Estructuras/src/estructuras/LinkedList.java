@@ -99,15 +99,12 @@ public class LinkedList<T> {
 		}else {
 			Node<T> temp ;
 			temp=head;
-		//	temp=head;
 			while (temp!=null) {
-				if (temp.data.equals(valor)) {
-					System.out.println("null temp");
+				if (temp.data == valor) {
+					System.out.println(temp.data);
 					return temp.data;
 				}
 				temp=temp.next;
-				System.out.println(temp.data);
-				
 			}			
 			return null ;
 		}

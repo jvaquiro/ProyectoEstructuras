@@ -66,7 +66,7 @@ public class Trazabilidad {
 		}
 	}
 	public void buscarBovino(String id) {
-		Bovinos vaquita = new Bovinos(id, null, null, null);
+		Bovinos vaquita = new Bovinos(id,null,null,null);
 		l.finds(vaquita);
 	}
 	
