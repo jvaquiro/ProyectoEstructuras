@@ -89,7 +89,7 @@ public class LinkedList<T> {
 		if (this.head != null) {
 			Node<T> iterator = head;
 			while (iterator.next != null) {
-				System.out.print(iterator.data);
+				System.out.print(iterator.data + " ");
 				iterator = iterator.next;
 			}
 			System.out.println(iterator.data);
@@ -122,6 +122,32 @@ public class LinkedList<T> {
 		}
 
 	}
-
-
+	public int size() {
+		Node<T> i = this.getHead();
+		int count = 0;
+		while(i !=null) {
+			count ++;
+			i = i.next;
+		}
+		return count;
+	}
+	///*
+	public void sort() {
+		Node<T> i = this.getHead();
+		System.out.println(this.size());
+		while (i != null) {
+			Node<T> j = head.next;
+			j = this.getHead();
+			while (j.next != null) {
+				if((Integer)i.data < (Integer)j.data) {
+					T temp = i.data;
+					i.data = j.data;
+					j.data = temp;
+				}
+				j = j.next;
+			}
+			i = i.next;
+		}
+	}
+	
 }

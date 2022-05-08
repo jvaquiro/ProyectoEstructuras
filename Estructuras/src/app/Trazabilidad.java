@@ -9,10 +9,10 @@ import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Trazabilidad {
-	Stack<Bovinos> s = new Stack<>();
-	Queue<Bovinos> q = new Queue<>();
-	LinkedList<Bovinos> l = new LinkedList<>();
-	DinamicArray<Bovinos> d = new DinamicArray<>();
+	public Stack<Bovinos> s = new Stack<>();
+	public Queue<Bovinos> q = new Queue<>();
+	public LinkedList<Bovinos> l = new LinkedList<>();
+	public DinamicArray<Bovinos> d = new DinamicArray<>();
 
 	// Metodos
 	public void registrarBovinoLL(String[] datos) {
