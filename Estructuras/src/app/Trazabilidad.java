@@ -66,10 +66,28 @@ public class Trazabilidad {
 
 		}
 	}
+	
+	public void guardarBovinoTXT_D() {
+		try {
+			BufferedWriter bw = new BufferedWriter(new FileWriter("test.txt"));
+			bw.write("");
+			bw.close();
+			File archivo = new File("test.txt");
+			FileWriter escribir = new FileWriter(archivo, true);
+			for (int i = 0; i < d.sizeData(); i++) {
+				escribir.write(d.iterar(i));
+			}
+			escribir.close();
+		} catch (Exception e) {
+			System.out.println("Error al escribir");
+
+		}
+		
+	}
 
 	public void cargarBovinoTxT() {
 		try {
-			Scanner input = new Scanner(new File("test.txt"));
+			Scanner input = new Scanner(new File("Bovinos_10M.txt"));
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				String[] part = line.split(" ");

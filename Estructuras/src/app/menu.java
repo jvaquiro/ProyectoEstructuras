@@ -53,8 +53,8 @@ public class menu {
 					//t.guardarBovinoTXT(1);
 					//t.guardarBovinoTXT(2);
 					t.guardarBovinoTXT(3);
-
 					loop = true;
+
 				}
 				else if ((input)== 6) {
 

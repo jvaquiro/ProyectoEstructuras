@@ -5,6 +5,7 @@ public class DinamicArray<T> {
 	Object array[];
 	int capacity;
 	int current;
+	
 
 	public DinamicArray() {
 		array = new Object[2];
@@ -35,7 +36,13 @@ public class DinamicArray<T> {
 			System.out.print(array[i]);
 		}
 	}
+	public int sizeData() {
+		return current;
+	}
 
+	public String iterar(int i) {
+		return array[i].toString();
+	}
 	public void find(Node<T> bovino) {
 		for(int i = 0; i<current;i++) {
 			if (bovino.data.toString().equals(array[i].toString())) {
@@ -43,6 +50,7 @@ public class DinamicArray<T> {
 				break;
 			}
 		}
+		System.out.println("no lo encontro");
 	}
 
 }

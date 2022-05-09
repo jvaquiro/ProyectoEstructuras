@@ -106,12 +106,12 @@ public class LinkedList<T> {
 		}else {
 			Node<T> temp ;
 			temp=head;
-			System.out.println(temp.data.toString()+"-_-"+node.data.toString());
+			//System.out.println(temp.data.toString()+"-_-"+node.data.toString());
 			//	System.out.println(node.data+"-_-");
 			//	System.out.println( temp.data +"__-__"+node.data+"_------_"+temp.data.equals(node.data) );
 			while (temp!=null) {
 				if (temp.data.toString().equals(node.data.toString())) {
-					System.out.println(temp.data + "la encontro");
+					//System.out.println(temp.data + "la encontro");
 					return index;
 				}
 				index++;

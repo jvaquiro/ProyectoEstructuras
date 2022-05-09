@@ -30,34 +30,75 @@ public class menu {
 			input = s.nextInt();
 			//try {
 			if((input)== 1) {
-				//t.registrarBovinoLL(agregar());
+				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				t.registrarBovinoLL(agregar());
 				//t.registrarBovinoQ(agregar());
 				//t.registrarBovinoS(agregar());
-				t.registrarBovinoD(agregar());
+				//t.registrarBovinoD(agregar());
+				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+				
+				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
 
 			}else if ((input)== 2){
-				//t.l.print();
+				  long TInicio, TFin, tiempo ; 
+				  TInicio = System.currentTimeMillis(); 
+				 
+
+				t.l.print();
 				//t.q.print();
 				//t.s.print();
-				t.d.print();
+				//t.d.print();
+				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
 			}else if ((input)== 3) {
-				//t.l.popBack();
+				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				 
+
+				t.l.popBack();
 				//t.q.dequeue();
 				//t.s.pop();
-				t.d.pop();
+				//t.d.pop();
+				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 4) {
+				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 				busqueda();
+				
+				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+				tiempo = (TFin - TInicio); //Calculamos los milisegundos de diferencia
+				System.out.println(TInicio);
+				System.out.println(TFin);
+				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 5) {
+				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 				t.cargarBovinoTxT();
+				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 6) {
-				//t.guardarBovinoTXT(1);
+				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				 
+
+				t.guardarBovinoTXT(1);
 				//t.guardarBovinoTXT(2);
-				t.guardarBovinoTXT(3);
+//				t.guardarBovinoTXT(3);
+				//t.guardarBovinoTXT_D();
+				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
+				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
 				loop = true;
 
@@ -78,8 +119,8 @@ public class menu {
 		String raza = s.next();
 		System.out.println("Sexo");
 		String sexo = s.next();
-		//t.BuscarBovinoLL(code,fecha,raza,sexo);
-		t.BuscarBovinoD(code, fecha, raza, sexo);
+		t.BuscarBovinoLL(code,fecha,raza,sexo);
+		//t.BuscarBovinoD(code, fecha, raza, sexo);
 	}
 
 	public static String[] agregar() {
