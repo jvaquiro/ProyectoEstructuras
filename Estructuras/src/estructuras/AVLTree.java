@@ -24,8 +24,8 @@ public class AVLTree<T extends Comparable<? super T>>{
 		root = insert(x, root);
 	}
 
-	public boolean contains(T x) {
-		return contains(x, root);
+	public boolean find(T x) {
+		return find(x, root);
 	}
 
 	public T findMin() {
@@ -67,14 +67,14 @@ public class AVLTree<T extends Comparable<? super T>>{
 		return balance(t);
 	}
 
-	private boolean contains(T x, BinaryNode<T> t) {
+	private boolean find(T x, BinaryNode<T> t) {
 		if (t == null)
 			return false;
 		int compareResult = x.compareTo(t.data);
 		if (compareResult < 0)
-			return contains(x, t.left);
+			return find(x, t.left);
 		else if (compareResult > 0)
-			return contains(x, t.right);
+			return find(x, t.right);
 		else
 			return true;
 		// Match
@@ -99,8 +99,6 @@ public class AVLTree<T extends Comparable<? super T>>{
 	}
 	
 	//AVLMethods
-
-
     private BinaryNode<T> balance(BinaryNode<T> node){
         if(node==null){
             return node;
@@ -163,12 +161,11 @@ public class AVLTree<T extends Comparable<? super T>>{
     //Preorder
     public void printPreorder() {
     	printPreorder(root);
-    	System.out.println();
     }
     
     public void printPreorder(BinaryNode<T> node) {
     	if(node != null) {
-    		System.out.println(node.data);
+    		System.out.print(node.data);
     		printPreorder(node.left);
     		printPreorder(node.right);
     	}

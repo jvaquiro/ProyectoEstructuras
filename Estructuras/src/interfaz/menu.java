@@ -24,7 +24,7 @@ public class menu {
 			System.out.println("2. Mostrar todas las Vaquitas");
 			System.out.println("3. Eliminar vaquita del sistema");
 			System.out.println("4. Buscar Vaquita");
-			System.out.println("5. Vaquitas en el arbol de Faenacion :c");
+			System.out.println("5. Vaquitas listas para faenar :c");
 			System.out.println("6. Cargar datos");
 			System.out.println("7. Guardar Cambios y salir del programa");
 			int input;

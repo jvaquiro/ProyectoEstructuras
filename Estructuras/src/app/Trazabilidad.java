@@ -124,19 +124,12 @@ public class Trazabilidad {
 	
 	public void clasificar(Bovinos o) {
 		
-		String dateBeforeString = o.getFechaNacimiento();
-		String dateAfterString = "2022-05-28";
+		String fechaDeNacimiento = o.getFechaNacimiento();
+		String fechaActual = "2022-05-28";
 			
-		//Parsing the date
-		LocalDate dateBefore = LocalDate.parse(dateBeforeString);
-		LocalDate dateAfter = LocalDate.parse(dateAfterString);
-			
-		//calculating number of days in between
-		long edad = ChronoUnit.DAYS.between(dateBefore, dateAfter);
-			
-		//displaying the number of days
-		System.out.println(edad);
-		 
+		LocalDate nacimiento = LocalDate.parse(fechaDeNacimiento);
+		LocalDate actual = LocalDate.parse(fechaActual);
+		long edad = ChronoUnit.DAYS.between(nacimiento, actual);
 		if(edad>1000) {
 			Faenar(o);
 		}else {
