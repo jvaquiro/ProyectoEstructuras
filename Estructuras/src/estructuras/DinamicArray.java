@@ -2,13 +2,13 @@ package estructuras;
 
 public class DinamicArray<T> {
 
-	Object array[];
+	T[] array;
 	int capacity;
 	int current;
 	
 
 	public DinamicArray() {
-		array = new Object[2];
+		array = (T[])new Object[2];
 		capacity = 2;
 		current = 0;
 
@@ -16,7 +16,7 @@ public class DinamicArray<T> {
 
 	public void push(T data) {
 		if (current == capacity) {
-			Object[] clon = new Object[2*capacity];
+			T[] clon = (T[])new Object[2*capacity];
 			for(int x = 0; x < capacity; x++) {
 				clon[x] = array[x];
 			}

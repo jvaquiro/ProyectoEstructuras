@@ -159,5 +159,12 @@ public class AVLTree<T extends Comparable<? super T>>{
         return rotateRR(node);
     }
 
+    //Preorder
+    public void printPreorder(BinaryNode<T> node) {
+    	if(node != null) {
+    		System.out.println(node.data + " ");
+    	}
+    }
+    
 
 }
