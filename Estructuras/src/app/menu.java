@@ -27,32 +27,32 @@ public class menu {
 			input = s.nextInt();
 			try {
 				if((input)== 1) {
-					//t.registrarBovinoLL(agregar());
+					t.registrarBovinoLL(agregar());
 					//t.registrarBovinoQ(agregar());
 					//t.registrarBovinoS(agregar());
-					t.registrarBovinoD(agregar());
+					//t.registrarBovinoD(agregar());
 
 
 				}else if ((input)== 2){
-					//t.l.print();
+					t.l.print();
 					//t.q.print();
 					//t.s.print();
-					t.d.print();
+					//t.d.print();
 					System.out.println(String.format( " " ));
 
 				}else if ((input)== 3) {
-					//t.l.popBack();
+					t.l.popBack();
 					//t.q.dequeue();
 					//t.s.pop();
-					t.d.pop();
+					//t.d.pop();
 				}
 				else if ((input)== 4) {
 					t.cargarBovinoTxT();	
 				}
 				else if ((input)== 5) {
-					//t.guardarBovinoTXT(1);
+					t.guardarBovinoTXT(1);
 					//t.guardarBovinoTXT(2);
-					t.guardarBovinoTXT(3);
+					//t.guardarBovinoTXT(3);
 					loop = true;
 
 				}

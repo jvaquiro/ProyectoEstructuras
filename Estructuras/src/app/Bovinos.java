@@ -1,6 +1,6 @@
 package app;
 
-public class Bovinos {
+public class Bovinos implements Comparable<Bovinos>{
 	private String codigo;
 	private String fechaNacimiento;
 	private String raza;
@@ -8,7 +8,7 @@ public class Bovinos {
 
 	// constructor
 
-	public Bovinos( String codigo, String fechaNacimiento, String raza, String sexo) {
+	public Bovinos ( String codigo, String fechaNacimiento, String raza, String sexo) {
 		//super();
 		this.codigo = codigo;
 		this.fechaNacimiento = fechaNacimiento;
@@ -17,6 +17,8 @@ public class Bovinos {
 	}
 
 	// Metodos
+	
+
 
 	// Getter y setters
 	public String getFechaNacimiento() {
@@ -59,6 +61,17 @@ public class Bovinos {
 
 	public void setSexo(String sexo) {
 		this.sexo = sexo;
+	}
+
+	@Override
+	public int compareTo(Bovinos o) {
+		if (Integer.parseInt(this.codigo)>Integer.parseInt(o.codigo)) {
+			return 1;
+		}else if (Integer.parseInt(this.codigo)<Integer.parseInt(o.codigo)) {
+			return -1;
+		}else {
+			return 0;
+		}
 	}
 
 }

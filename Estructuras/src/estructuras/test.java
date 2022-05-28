@@ -1,6 +1,8 @@
 package estructuras;
 import app.Bovinos;
 public class test {
+	
+	
 
 	public static void main(String[] args) {
 		Stack<Integer> s = new Stack<>();

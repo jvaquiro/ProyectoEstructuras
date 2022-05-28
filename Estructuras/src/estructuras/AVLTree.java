@@ -168,7 +168,7 @@ public class AVLTree<T extends Comparable<? super T>>{
     
     public void printPreorder(BinaryNode<T> node) {
     	if(node != null) {
-    		System.out.println(node.data + " ");
+    		System.out.println(node.data);
     		printPreorder(node.left);
     		printPreorder(node.right);
     	}

@@ -6,6 +6,8 @@ import estructuras.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Scanner;
 
 public class Trazabilidad {
@@ -13,13 +15,14 @@ public class Trazabilidad {
 	public Queue<Bovinos> q = new Queue<>();
 	public LinkedList<Bovinos> l = new LinkedList<>();
 	public DinamicArray<Bovinos> d = new DinamicArray<>();
+	public AVLTree<Bovinos> a = new AVLTree<>();
 
 	// Metodos
-	public void registrarBovinoLL(String[] datos) {
+	/*public void registrarBovinoLL(String[] datos) {
 		Bovinos vaquita;
 		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
 		l.pushFront(new Node<Bovinos>(vaquita));
-	}
+	}*/
 
 	public void registrarBovinoQ(String[] datos) {
 		Bovinos vaquita;
@@ -88,7 +91,7 @@ public class Trazabilidad {
 
 	public void cargarBovinoTxT() {
 		try {
-			Scanner input = new Scanner(new File("Bovinos_10M.txt"));
+			Scanner input = new Scanner(new File("test.txt"));
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				String[] part = line.split(" ");
@@ -111,6 +114,38 @@ public class Trazabilidad {
 	public void BuscarBovinoD(String code, String fecha, String raza, String sexo) {
 		Bovinos p1 = new Bovinos(code,fecha,raza,sexo);
 		d.find(new Node (p1));
+	}
+	
+	public void registrarBovinoLL(String[] datos) {
+		Bovinos vaquita;
+		
+		clasificar(vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]));
+	}
+	
+	public void clasificar(Bovinos o) {
+		
+		String dateBeforeString = o.getFechaNacimiento();
+		String dateAfterString = "2022-05-28";
+			
+		//Parsing the date
+		LocalDate dateBefore = LocalDate.parse(dateBeforeString);
+		LocalDate dateAfter = LocalDate.parse(dateAfterString);
+			
+		//calculating number of days in between
+		long edad = ChronoUnit.DAYS.between(dateBefore, dateAfter);
+			
+		//displaying the number of days
+		System.out.println(edad);
+		 
+		if(edad>1000) {
+			Faenar(o);
+		}else {
+			l.pushFront(new Node<Bovinos>(o));
+		}	
+	}
+	public void Faenar(Bovinos o) {
+		a.insert(o);
+
 	}
 
 
