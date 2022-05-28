@@ -48,6 +48,7 @@ public class Trazabilidad {
 			f = q.getHead();
 		}
 		else {
+			
 			f = s.getHead();
 		}
 		try {

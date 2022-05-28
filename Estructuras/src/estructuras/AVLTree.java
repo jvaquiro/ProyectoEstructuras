@@ -64,7 +64,7 @@ public class AVLTree<T extends Comparable<? super T>>{
 			t.left = insert(x, t.left);
 		if (compareResult > 0)
 			t.right = insert(x, t.right);
-		return t;
+		return balance(t);
 	}
 
 	private boolean contains(T x, BinaryNode<T> t) {
@@ -95,10 +95,11 @@ public class AVLTree<T extends Comparable<? super T>>{
 			t.right = remove(t.data, t.right);
 		} else
 			t = (t.left != null) ? t.left : t.right;
-		return t;
+		return balance(t);
 	}
 	
 	//AVLMethods
+
 
     private BinaryNode<T> balance(BinaryNode<T> node){
         if(node==null){
@@ -160,10 +161,19 @@ public class AVLTree<T extends Comparable<? super T>>{
     }
 
     //Preorder
+    public void printPreorder() {
+    	printPreorder(root);
+    	System.out.println();
+    }
+    
     public void printPreorder(BinaryNode<T> node) {
     	if(node != null) {
     		System.out.println(node.data + " ");
+    		printPreorder(node.left);
+    		printPreorder(node.right);
     	}
+    
+    
     }
     
 

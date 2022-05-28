@@ -7,6 +7,7 @@ public class test {
 		Queue<Integer> q = new Queue<>();
 		LinkedList<Integer> l = new LinkedList<>();
 		DinamicArray<Bovinos> d = new DinamicArray<>();
+		AVLTree<Integer> a = new AVLTree<>();
 		Bovinos v = new Bovinos("3242", "sfsdfs", "null", "null");
 		Bovinos t = new Bovinos("null", "null", "null", "null");
 		Bovinos p = new Bovinos("nu5l", "null", "null", "null");
@@ -25,17 +26,17 @@ public class test {
 		d.push(t);
 		d.push(p);
 		//d.print();
+		a.insert(10);
+		a.insert(7);
+		a.insert(6);
+		a.insert(5);
+		a.insert(4);
+		a.insert(8);
+		a.insert(9);
+		a.printPreorder();
+
 		
-		for (int i = 0; i < d.sizeData(); i++) {
-			System.out.print(d.iterar(i));
-			
-		}
-
-
-
-
-
-
+		
 
 	}
 
