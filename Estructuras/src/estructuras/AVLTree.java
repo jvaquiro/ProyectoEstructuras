@@ -1,5 +1,9 @@
 package estructuras;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.BufferUnderflowException;
 
 public class AVLTree<T extends Comparable<? super T>>{
@@ -165,9 +169,54 @@ public class AVLTree<T extends Comparable<? super T>>{
     
     public void printPreorder(BinaryNode<T> node) {
     	if(node != null) {
-    		System.out.print(node.data);
-    		printPreorder(node.left);
-    		printPreorder(node.right);
+    	System.out.print(node.data);
+		printPreorder(node.left);
+		printPreorder(node.right);
+    	}
+	}
+//guardar    
+    public void guardarPreorder() {
+    	guardarPreorder(root);
+    }
+    public void guardarPreorder(BinaryNode<T> node) {
+    	if(node != null) {
+    		File archivo;
+    		FileWriter escribir;
+    		PrintWriter linea;
+    		archivo =new File("test.txt");
+    		
+    		
+    		if (!archivo.exists()) {
+    			try {
+    				archivo.createNewFile();
+    				escribir=new FileWriter(archivo,true);
+    				linea=new PrintWriter(escribir);
+    				//escribims archiv
+    				linea.print(node.data);
+    				linea.close();
+    				escribir.close();
+    			} catch (IOException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+    			
+    		}else {
+    			try {
+    				escribir=new FileWriter(archivo,true);
+    				linea=new PrintWriter(escribir);
+    				//escribims archiv
+    				linea.print(node.data);
+    				linea.close();
+    				escribir.close();
+    			} catch (IOException e) {
+    				// TODO Auto-generated catch block
+    				e.printStackTrace();
+    			}
+    			
+    		}
+//    		System.out.print(node.data);
+    		guardarPreorder(node.left);
+    		guardarPreorder(node.right);
     	}
     
     

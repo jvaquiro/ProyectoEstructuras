@@ -23,7 +23,10 @@ public class Trazabilidad {
 		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
 		l.pushFront(new Node<Bovinos>(vaquita));
 	}*/
-
+	public void registrarBovinoLL(String[] datos) {
+		Bovinos vaquita;
+		clasificar(vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]));
+	}
 	public void registrarBovinoQ(String[] datos) {
 		Bovinos vaquita;
 		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
@@ -88,6 +91,11 @@ public class Trazabilidad {
 		}
 		
 	}
+	
+	public void guardarFaenados() {
+		a.guardarPreorder();
+		
+	}
 
 	public void cargarBovinoTxT() {
 		try {
@@ -107,20 +115,21 @@ public class Trazabilidad {
 		}
 	}
 
-	public void BuscarBovinoLL(String code, String fecha, String raza, String sexo) {
+	public int BuscarBovinoLL(String code, String fecha, String raza, String sexo) {
 		Bovinos p1 = new Bovinos(code,fecha,raza,sexo);
-		System.out.println(l.finds(new Node (p1))); 
+ //		System.out.println(l.finds(new Node (p1))); 
+		return l.finds(new Node (p1));
+	}
+	public void BuscarBovinoFaenado(String code ) {
+		Bovinos p1 = new Bovinos(code,null,null,null);
+		System.out.println((a.find(p1)==true)?"En faenacion :c":"El registro No existe"); 
 	}
 	public void BuscarBovinoD(String code, String fecha, String raza, String sexo) {
 		Bovinos p1 = new Bovinos(code,fecha,raza,sexo);
 		d.find(new Node (p1));
 	}
 	
-	public void registrarBovinoLL(String[] datos) {
-		Bovinos vaquita;
-		
-		clasificar(vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]));
-	}
+	
 	
 	public void clasificar(Bovinos o) {
 		

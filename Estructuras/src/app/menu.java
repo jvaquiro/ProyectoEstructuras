@@ -68,6 +68,7 @@ public class menu {
 					String sexo = s.next();
 					//t.BuscarBovinoLL(code,fecha,raza,sexo);
 					t.BuscarBovinoD(code, fecha, raza, sexo);
+					//t.BuscarBovinoFaenado(code);
 
 
 				}

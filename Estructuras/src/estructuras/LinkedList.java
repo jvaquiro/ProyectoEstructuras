@@ -101,7 +101,7 @@ public class LinkedList<T> {
 	public int finds( Node node) {
 		int index=0;
 		if (check()) {
-			System.out.println("null chec");
+		//	System.out.println("null chec");
 			return -1;
 		}else {
 			Node<T> temp ;
@@ -111,13 +111,13 @@ public class LinkedList<T> {
 			//	System.out.println( temp.data +"__-__"+node.data+"_------_"+temp.data.equals(node.data) );
 			while (temp!=null) {
 				if (temp.data.toString().equals(node.data.toString())) {
-					//System.out.println(temp.data + "la encontro");
 					return index;
 				}
 				index++;
+				//System.out.println(temp.data.toString() + " ");
 				temp = temp.next;
 			}			
-			System.out.println("Nop");
+		//	System.out.println("Nop");
 			return -1 ;
 		}
 

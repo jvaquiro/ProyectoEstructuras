@@ -31,25 +31,25 @@ public class menu {
 			input = s.nextInt();
 			//try {
 			if((input)== 1) {
-				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
-				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 				t.registrarBovinoLL(agregar());
 				//t.registrarBovinoQ(agregar());
 				//t.registrarBovinoS(agregar());
 				//t.registrarBovinoD(agregar());
 				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
 				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
-				
+
 				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
 
 			}else if ((input)== 2){
-				  long TInicio, TFin, tiempo ; 
-				  TInicio = System.currentTimeMillis(); 
-				 
+				long TInicio, TFin, tiempo ; 
+				TInicio = System.currentTimeMillis(); 
+
 
 				t.l.print();
-				
+
 				//t.q.print();
 				//t.s.print();
 				//t.d.print();
@@ -58,9 +58,9 @@ public class menu {
 				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 
 			}else if ((input)== 3) {
-				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
-				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
-				 
+				long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+
 
 				t.l.popBack();
 				//t.q.dequeue();
@@ -71,36 +71,37 @@ public class menu {
 				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 4) {
-				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
-				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 				busqueda();
-				
+
 				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
 				tiempo = (TFin - TInicio); //Calculamos los milisegundos de diferencia
-				System.out.println(TInicio);
-				System.out.println(TFin);
+			//	System.out.println(TInicio);
+			//	System.out.println(TFin);
 				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 5) {
 				t.a.printPreorder();
-			}
+				}
 			else if((input)== 6) {
 				long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
-				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 				t.cargarBovinoTxT();
 				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
 				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
 				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
-				
+
 			}
 			else if ((input)== 7) {
-				  long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
-				  TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
-				 
+				long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+				TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+
 
 				t.guardarBovinoTXT(1);
+				t.guardarFaenados();
 				//t.guardarBovinoTXT(2);
-//				t.guardarBovinoTXT(3);
+				//				t.guardarBovinoTXT(3);
 				//t.guardarBovinoTXT_D();
 				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
 				tiempo = TFin - TInicio; //Calculamos los milisegundos de diferencia
@@ -125,8 +126,16 @@ public class menu {
 		String raza = s.next();
 		System.out.println("Sexo");
 		String sexo = s.next();
-		t.BuscarBovinoLL(code,fecha,raza,sexo);
-		//t.BuscarBovinoD(code, fecha, raza, sexo);
+		System.out.println(t.BuscarBovinoLL(code,fecha,raza,sexo));
+		if (t.BuscarBovinoLL(code,fecha,raza,sexo)==-1) {
+			t.BuscarBovinoFaenado(code);			
+		}else {
+			
+			System.out.println((t.BuscarBovinoLL(code,fecha,raza,sexo)!=-1)?"En trazabilidad":"El registro No existe"); 
+		}
+
+		//	t.BuscarBovinoD(code, fecha, raza, sexo);
+
 	}
 
 	public static String[] agregar() {
