@@ -53,4 +53,8 @@ public class DinamicArray<T> {
 		System.out.println("no lo encontro");
 	}
 
+	public T getArray(int i) {
+		return array[i];
+	}
+
 }

@@ -99,14 +99,15 @@ public class Trazabilidad {
 
 	public void cargarBovinoTxT() {
 		try {
-			Scanner input = new Scanner(new File("test.txt"));
+			Scanner input = new Scanner(new File("Bovinos_10k.txt"));
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				String[] part = line.split(" ");
 				registrarBovinoLL(part);
-				registrarBovinoQ(part);
-				registrarBovinoS(part);
-				registrarBovinoD(part);
+				//registrarBovinoQ(part);
+				//registrarBovinoS(part);
+				//registrarBovinoD(part);
+				//d.print();
 
 			}
 			input.close();

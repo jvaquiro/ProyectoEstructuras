@@ -1,13 +1,19 @@
 package interfaz;
 import app.*;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class menu {
 
 	static Scanner s = new Scanner(System.in);
 	static Trazabilidad t = new Trazabilidad();
+	static Login lg = new Login();
 
 	public static void main(String[] args) {
+		lg.LoginMenu();
 		menuPrincipal();
 
 
@@ -71,15 +77,10 @@ public class menu {
 				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 4) {
-				long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
-				TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
+				
 				busqueda();
-
-				TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
-				tiempo = (TFin - TInicio); //Calculamos los milisegundos de diferencia
 			//	System.out.println(TInicio);
 			//	System.out.println(TFin);
-				System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 			}
 			else if ((input)== 5) {
 				t.a.printPreorder();
@@ -127,13 +128,17 @@ public class menu {
 		System.out.println("Sexo");
 		String sexo = s.next();
 		System.out.println(t.BuscarBovinoLL(code,fecha,raza,sexo));
+		long TInicio, TFin, tiempo ; //Variables para determinar el tiempo de ejecución
+		TInicio = System.currentTimeMillis();//Tomamos la hora en que inicio el algoritmo y la almacenamos en la variable inicio
 		if (t.BuscarBovinoLL(code,fecha,raza,sexo)==-1) {
 			t.BuscarBovinoFaenado(code);			
 		}else {
 			
 			System.out.println((t.BuscarBovinoLL(code,fecha,raza,sexo)!=-1)?"En trazabilidad":"El registro No existe"); 
 		}
-
+		TFin = System.currentTimeMillis(); //Tomamos la hora en que finalizó el algoritmo y la almacenamos en la variable T
+		tiempo = (TFin - TInicio); //Calculamos los milisegundos de diferencia
+		System.out.println("Tiempo de ejecución en milisegundos: " + tiempo); //Mostramos en pantalla el tiempo de ejecución en milisegundos
 		//	t.BuscarBovinoD(code, fecha, raza, sexo);
 
 	}

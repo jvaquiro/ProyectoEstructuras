@@ -11,6 +11,7 @@ public class menu {
 		menuPrincipal();
 	}
 
+	
 	public static void menuPrincipal () {
 		boolean loop = false;
 
@@ -91,5 +92,4 @@ public class menu {
 
 		return datos;
 	}
-
-}
+	}
