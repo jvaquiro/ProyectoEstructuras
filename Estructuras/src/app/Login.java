@@ -104,7 +104,9 @@ public class Login {
 	
 	
 	public boolean ingresar() {
+		System.out.println("Ingrese su usuario");
 		String etd_user = scan.nextLine();
+		System.out.println("Ingrese su contraseña");
 		String etd_password = scan.nextLine();
 		if (CorroborarCredenciales(etd_user, etd_password)) {
 			System.out.println("Ingreso exitoso");
