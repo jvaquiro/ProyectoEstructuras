@@ -30,7 +30,7 @@ public class Controller implements Initializable {
 	static Trazabilidad t = new Trazabilidad();
 	public AVLTree<Bovinos> a = new AVLTree<>();
 
-
+	
 	@FXML
 	private Label Aviso;
 
@@ -269,5 +269,10 @@ public class Controller implements Initializable {
 		c_sexo1.setCellValueFactory(new PropertyValueFactory<Bovinos,String>("sexo"));
 
 	}
+	public static Object closeWindow() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	 
 
 }

@@ -14,10 +14,11 @@ import javafx.scene.layout.Pane;
 public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Parent root =FXMLLoader.load(getClass().getResource("pf.fxml"));
+		Parent root =FXMLLoader.load(getClass().getResource("login.fxml"));
 		Scene scene = new Scene(root);
 		primaryStage.setScene(scene);
 		primaryStage.show();
+		
 	}
 	
 	public static void main(String[] args) {
