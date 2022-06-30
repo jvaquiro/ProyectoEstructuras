@@ -18,7 +18,14 @@ public class test {
 		Bovinos t = new Bovinos("23434", "null", "null", "null");
 		Bovinos p = new Bovinos("34324", "null", "null", "null");
 		Bovinos u = new Bovinos("34324", "1", "1", "1");
+		HashTable<Node> h = new HashTable<>();
 
+		h.insert(new Node<Bovinos>(v));
+		
+		
+		
+		
+		
 		/*l.pushFront(new Node (t));
 		l.pushFront(new Node (p));
 		l.pushFront(new Node (v));*/
@@ -30,8 +37,8 @@ public class test {
 		l.pushBack(new Node<Integer>(305));
 		l.pushBack(new Node<Integer>(5));*/
 		a.insert(v);
-		a.insert(t);
-		a.insert(u);
+		//a.insert(t);
+		//a.insert(u);
 		//d.print();
 		/*a.insert(10);
 		a.insert(7);
@@ -41,8 +48,8 @@ public class test {
 		a.insert(8);
 		a.insert(9);*/
 		
-		a.guardarPreorder();
-		System.out.println(a.find(p));
+		//a.guardarPreorder();
+		System.out.println(a.find(v));
 		 
 
 	}

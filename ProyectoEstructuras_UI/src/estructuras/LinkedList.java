@@ -149,5 +149,42 @@ public class LinkedList<T> {
 			i = i.next;
 		}
 	}
+	public boolean find(T k) {
+        if (!check()) {
+            Node<T> iterator = head;
+            while (iterator != null) {
+                if (iterator.data.equals(k)) {
+                    return true;
+                }
+                iterator = iterator.next;
+            }
+            return false;
+        } else {
+            return false;
+        }
+    }
+	
+	public void delete(T k) {
+        if (!check()) {
+            Node<T> iterator = this.head;
+            if (iterator.data.equals(k)) {
+                popFront();
+            } else if (this.tail.data.equals(k) ) {
+                popBack();
+            } else {
+                while (iterator.next != null) {
+                    if (iterator.next.data.equals(k)) {
+                        if (iterator.next.next == null) {
+                            popBack();
+                            break;
+                        } else {
+                            iterator.next = iterator.next.next;
+                        }
+                    }
+                    iterator = iterator.next;
+                }
+            }
+        }
+    }
 	
 }

@@ -42,7 +42,7 @@ public class test {
 		a.insert(9);*/
 		
 		a.guardarPreorder();
-		System.out.println(a.find(p));
+		System.out.println("Hello World");
 		 
 
 	}
