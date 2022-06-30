@@ -14,15 +14,26 @@ public class test {
 		LinkedList<Integer> l = new LinkedList<>();
 		DinamicArray<Bovinos> d = new DinamicArray<>();
 		AVLTree<Bovinos> a = new AVLTree<>();
-		Bovinos v = new Bovinos("3242", "sfsdfs", "null", "null");
+		Bovinos v = new Bovinos("3242", "2022-04-05", "Simmental", "macho");
 		Bovinos t = new Bovinos("23434", "null", "null", "null");
 		Bovinos p = new Bovinos("34324", "null", "null", "null");
 		Bovinos u = new Bovinos("34324", "1", "1", "1");
-		HashTable<Node> h = new HashTable<>();
+		HashTable<Bovinos> h = new HashTable<>();
 
-		h.insert(new Node<Bovinos>(v));
-		
-		
+		for (int i = 0; i < 1000000; i++) {
+			h.insert(v);
+			h.insert(t);
+			h.insert(p);
+			h.insert(u);
+			
+		}
+		/*h.insert(t);
+		h.insert(u);
+		h.insert(p);
+		h.delete(v); 
+		h.find(v);
+		*/
+		 
 		
 		
 		
@@ -36,7 +47,7 @@ public class test {
 		l.pushBack(new Node<Integer>(205));
 		l.pushBack(new Node<Integer>(305));
 		l.pushBack(new Node<Integer>(5));*/
-		a.insert(v);
+		//a.insert(v);
 		//a.insert(t);
 		//a.insert(u);
 		//d.print();
@@ -49,7 +60,7 @@ public class test {
 		a.insert(9);*/
 		
 		//a.guardarPreorder();
-		System.out.println(a.find(v));
+		System.out.println(h.find(v));
 		 
 
 	}

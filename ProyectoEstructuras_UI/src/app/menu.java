@@ -15,23 +15,25 @@ public class menu {
 	public static void menuPrincipal () {
 		boolean loop = false;
 
+		t.FirstInsertion();
 		while (loop != true) {
 			System.out.println(String.format( "***Sistema de trazabilidad de ganado***"
 					+ "\nSeleccione la opcion que desea utilizar"));
 			System.out.println("1. Agregar una Vaquita");
 			System.out.println("2. Mostrar todas las Vaquitas");
 			System.out.println("3. Vaquita Faenada :c");
-			System.out.println("6. Buscar Vaquita");
 			System.out.println("4. Cargar datos");
 			System.out.println("5. Guardar Cambios y salir del programa");
+			System.out.println("6. Buscar Vaquita");
 			int input;
 			input = s.nextInt();
 			try {
 				if((input)== 1) {
-					t.registrarBovinoLL(agregar());
+					//t.registrarBovinoLL(agregar());
 					//t.registrarBovinoQ(agregar());
 					//t.registrarBovinoS(agregar());
 					//t.registrarBovinoD(agregar());
+					t.registrarBovinoHT(agregar());
 
 
 				}else if ((input)== 2){
@@ -68,7 +70,8 @@ public class menu {
 					System.out.println("Ingrese el sexo del animal");
 					String sexo = s.next();
 					//t.BuscarBovinoLL(code,fecha,raza,sexo);
-					t.BuscarBovinoD(code, fecha, raza, sexo);
+					//t.BuscarBovinoD(code, fecha, raza, sexo);
+					t.BuscarBovinoHT(code, fecha, raza, sexo);
 					//t.BuscarBovinoFaenado(code);
 
 
