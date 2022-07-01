@@ -2,6 +2,7 @@ package estructuras;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.util.Objects;
 
 import app.Bovinos;
 public class test {
@@ -19,14 +20,26 @@ public class test {
 		Bovinos p = new Bovinos("34324", "null", "null", "null");
 		Bovinos u = new Bovinos("34324", "1", "1", "1");
 		HashTable<Bovinos> h = new HashTable<>();
+		Map<String, Bovinos> map = new Map<>();
 
-		for (int i = 0; i < 1000000; i++) {
+		/*for (int i = 0; i < 1000000; i++) {
 			h.insert(v);
 			h.insert(t);
 			h.insert(p);
 			h.insert(u);
-			
 		}
+		*/
+		
+		map.add("34324", u);
+		map.add("3242", v);
+		map.add("23434", t);
+		map.add("34234", p);
+		System.out.println(map.size());
+        System.out.println(map.remove("3242"));
+        System.out.println(map.get("23434"));
+        System.out.println(map.get("24435"));
+        System.out.println(map.size());
+        System.out.println(map.isEmpty());
 		/*h.insert(t);
 		h.insert(u);
 		h.insert(p);
@@ -34,8 +47,7 @@ public class test {
 		h.find(v);
 		*/
 		 
-		
-		
+        System.out.println(Objects.hashCode("7845"));
 		
 		/*l.pushFront(new Node (t));
 		l.pushFront(new Node (p));
@@ -60,7 +72,7 @@ public class test {
 		a.insert(9);*/
 		
 		//a.guardarPreorder();
-		System.out.println(h.find(v));
+		//System.out.println(h.find(v));
 		 
 
 	}

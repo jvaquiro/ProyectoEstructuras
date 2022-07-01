@@ -14,8 +14,6 @@ public class menu {
 	
 	public static void menuPrincipal () {
 		boolean loop = false;
-
-		t.FirstInsertion();
 		while (loop != true) {
 			System.out.println(String.format( "***Sistema de trazabilidad de ganado***"
 					+ "\nSeleccione la opcion que desea utilizar"));
@@ -33,7 +31,8 @@ public class menu {
 					//t.registrarBovinoQ(agregar());
 					//t.registrarBovinoS(agregar());
 					//t.registrarBovinoD(agregar());
-					t.registrarBovinoHT(agregar());
+					//t.registrarBovinoHT(agregar());
+					t.registrarBovinoMap(agregar());
 
 
 				}else if ((input)== 2){
@@ -63,16 +62,17 @@ public class menu {
 
 					System.out.println("Ingrese el codigo del animal");
 					String code = s.next();
-					System.out.println("Ingrese el fecha de nacimiento del animal");
+					/*System.out.println("Ingrese el fecha de nacimiento del animal");
 					String fecha = s.next();
 					System.out.println("Ingrese la raza del animal");
 					String raza = s.next();
 					System.out.println("Ingrese el sexo del animal");
-					String sexo = s.next();
+					String sexo = s.next();*/
 					//t.BuscarBovinoLL(code,fecha,raza,sexo);
 					//t.BuscarBovinoD(code, fecha, raza, sexo);
-					t.BuscarBovinoHT(code, fecha, raza, sexo);
+					//t.BuscarBovinoHT(code, fecha, raza, sexo);
 					//t.BuscarBovinoFaenado(code);
+					t.BuscarBovinoMap(code);
 
 
 				}

@@ -2,6 +2,9 @@ package estructuras;
 
 public class Node<T> {
 	public T data;
+	public Node<T> next;
+	
+	
 	public T getData() {
 		return data;
 	}
@@ -17,9 +20,6 @@ public class Node<T> {
 	public void setNext(Node<T> next) {
 		this.next = next;
 	}
-
-	public Node<T> next;
-
 	public Node(T data) {
 		this.data = data;
 		this.next = null;

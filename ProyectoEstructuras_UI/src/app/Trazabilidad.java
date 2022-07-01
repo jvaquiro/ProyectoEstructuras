@@ -17,7 +17,8 @@ public class Trazabilidad {
 	public DinamicArray<Bovinos> d = new DinamicArray<>();
 	public AVLTree<Bovinos> a = new AVLTree<>();
 	public HashTable<Bovinos> ht = new HashTable<>();
-	Bovinos u = new Bovinos("34324", "1", "1", "1");
+	public Map<String, Bovinos> map = new Map<>();
+	
 	
 
 	// Metodos
@@ -26,9 +27,7 @@ public class Trazabilidad {
 		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
 		l.pushFront(new Node<Bovinos>(vaquita));
 	}*/
-	public void FirstInsertion() {
-		ht.insert(u);
-	}
+
 	public void registrarBovinoLL(String[] datos) {
 		Bovinos vaquita;
 		clasificar(vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]));
@@ -56,6 +55,14 @@ public class Trazabilidad {
 		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
 		ht.insert(vaquita);
 	}
+	
+	public void registrarBovinoMap(String[] datos) {
+		Bovinos vaquita;
+		vaquita = new Bovinos(datos[0], datos[1], datos[2], datos[3]);
+		String codigo = datos[0];
+		map.add(codigo, vaquita);
+	}
+
 
 	public void guardarBovinoTXT(int t) {
 		Node<Bovinos> f ;
@@ -111,7 +118,7 @@ public class Trazabilidad {
 
 	public void cargarBovinoTxT() {
 		try {
-			Scanner input = new Scanner(new File("Bovinos_10k.txt"));
+			Scanner input = new Scanner(new File("Bovinos_10M.txt"));
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				String[] part = line.split(" ");
@@ -119,7 +126,8 @@ public class Trazabilidad {
 				//registrarBovinoQ(part);
 				//registrarBovinoS(part);
 				//registrarBovinoD(part);
-				registrarBovinoHT(part);
+				//registrarBovinoHT(part);
+				registrarBovinoMap(part);
 				//d.print();
 
 			}
@@ -147,6 +155,9 @@ public class Trazabilidad {
 	public void BuscarBovinoHT(String code, String fecha, String raza, String sexo) {
 		Bovinos p1 = new Bovinos(code,fecha,raza,sexo);
 		ht.find(p1);
+	}
+	public void BuscarBovinoMap(String code) {
+		System.out.println(map.get(code));
 	}
 	
 	public void print() {

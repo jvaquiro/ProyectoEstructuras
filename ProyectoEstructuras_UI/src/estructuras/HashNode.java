@@ -1,27 +1,18 @@
 package estructuras;
 
-public class HashNode<K, V> {
+public class HashNode<K,V> {
 	K key;
-	V value;
-
-	public HashNode(K key, V value) {
-		this.key = key;
-		this.value = value;
-	}
-
-	public boolean equals(Object o) {
-		HashNode<K,V> node=(HashNode)o;
-		if (this.key.equals(node.key)) {
-			return true;
-		}
-		return false;
-	}
-	
-	public K getKey() {
-        return key;
-    }
-
-    public V getValue() {
-        return value;
+    V value;
+    final int hashCode;
+ 
+    // Reference to next node
+    HashNode<K, V> next;
+ 
+    // Constructor
+    public HashNode(K key, V value, int hashCode)
+    {
+        this.key = key;
+        this.value = value;
+        this.hashCode = hashCode;
     }
 }
