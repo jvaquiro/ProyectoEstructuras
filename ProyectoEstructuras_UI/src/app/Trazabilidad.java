@@ -118,7 +118,7 @@ public class Trazabilidad {
 
 	public void cargarBovinoTxT() {
 		try {
-			Scanner input = new Scanner(new File("Bovinos_10k.txt"));
+			Scanner input = new Scanner(new File("Bovinos_10M.txt"));
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
 				String[] part = line.split(" ");
