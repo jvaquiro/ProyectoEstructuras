@@ -9,7 +9,7 @@ public class DinamicArray<T> {
 
 	public DinamicArray() {
 		array = (T[])new Object[2];
-		capacity = 2;
+		capacity = 101;
 		current = 0;
 
 	}
@@ -55,6 +55,14 @@ public class DinamicArray<T> {
 
 	public T getArray(int i) {
 		return array[i];
+	}
+
+	public T get(int index) {
+		return array[index];
+	}
+
+	public void set(int Index, T node) {
+		array[Index] = node;
 	}
 
 }
