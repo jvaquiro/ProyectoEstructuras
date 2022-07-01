@@ -47,7 +47,7 @@ public class test {
 		h.find(v);
 		*/
 		 
-        System.out.println(Objects.hashCode("7845"));
+        //System.out.println(Objects.hashCode("7845"));
 		
 		/*l.pushFront(new Node (t));
 		l.pushFront(new Node (p));

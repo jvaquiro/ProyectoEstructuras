@@ -9996,5 +9996,5 @@
 11019 2019-09-11 Brahman hembra
 11020 2018-03-23 Limousin macho
 11021 2019-05-27 Angus macho
-11022 2020-01-05 Romagnola macho
+11022 2022-01-05 Romagnola macho
 11023 2019-01-26 Angus macho

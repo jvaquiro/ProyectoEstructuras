@@ -50,6 +50,7 @@ public class menu {
 				}
 				else if ((input)== 4) {
 					t.cargarBovinoTxT();	
+					System.out.println(t.map.size());
 				}
 				else if ((input)== 5) {
 					t.guardarBovinoTXT(1);

@@ -8,7 +8,7 @@ public class DinamicArray<T> {
 	
 
 	public DinamicArray() {
-		array = (T[])new Object[2];
+		array = (T[])new Object[101];
 		capacity = 101;
 		current = 0;
 
