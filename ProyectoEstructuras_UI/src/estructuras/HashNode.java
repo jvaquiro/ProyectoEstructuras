@@ -1,5 +1,5 @@
 package estructuras;
-
+// nodo para usar en map
 public class HashNode<K,V> {
 	K key;
     V value;
