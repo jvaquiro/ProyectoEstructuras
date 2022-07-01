@@ -45,7 +45,7 @@ public class Map<K, V> {
     // Method to remove a given key
     public V remove(K key)
     {
-        // Apply hash function to find index for given key
+    	// Apply hash function to find index for given key
         int bucketIndex = getBucketIndex(key);
         int hashCode = hashCode(key);
         // Get head of chain
@@ -64,9 +64,9 @@ public class Map<K, V> {
         }
  
         // If key was not there
-        if (head == null)
+        if (head == null) {
             return null;
- 
+        }
         // Reduce size
         size--;
  
@@ -75,7 +75,6 @@ public class Map<K, V> {
             prev.next = head.next;
         else
             bucketArray.set(bucketIndex, head.next);
- 
         return head.value;
     }
  
